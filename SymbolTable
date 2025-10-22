@@ -1,0 +1,26 @@
+/*
+ * Autor do documento: Breno Cardoso
+ *
+ 
+ */
+package br.breno.lexico;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+/**
+ * Tabela de símbolos simples para identificadores.
+ * Mantém a ordem e atribui um indice a cada novo id.
+ */
+public class SymbolTable {
+    private final Map<String, Integer> ids = new LinkedHashMap<>();
+
+    
+    public int indexOf(String identifier) {
+        return ids.computeIfAbsent(identifier, k -> ids.size() + 1);
+    }
+
+    public Map<String, Integer> snapshot() {
+        return new LinkedHashMap<>(ids);
+    }
+}
