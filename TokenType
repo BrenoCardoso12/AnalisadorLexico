@@ -1,0 +1,27 @@
+/*
+ 
+ * Autor do documento: Breno Cardoso
+ *
+ */
+package br.breno.lexico;
+
+/**
+ * Tipos de tokens:
+ * or = operadores relacionais (<, >, =, !)
+ * om = operadores matemáticos (+, *, /, -, %)
+ * ol = operadores lógicos (|, &, ~)
+ */
+public enum TokenType {
+    
+    INICIO, FIM, VAR, LEIA, ESCREVA, SE, SENAO,
+
+    
+    ID, NU, FR,
+
+    
+    OR, OM, OL, // or, om, ol
+    LPAREN, RPAREN, COLON, SEMICOLON,
+
+    
+    EOF
+}
