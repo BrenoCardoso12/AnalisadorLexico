@@ -1,0 +1,56 @@
+/*
+
+ * Autor do documento: Breno Cardoso
+ *
+*/
+package br.breno.lexico;
+
+
+ /* token produzido pelo analisador léxico.
+ */
+public class Token {
+    public final TokenType type;
+    public final String lexeme;
+    public final int line;
+    public final int column;
+
+    public Token(TokenType type, String lexeme, int line, int column) {
+        this.type = type;
+        this.lexeme = lexeme;
+        this.line = line;
+        this.column = column;
+    }
+
+    @Override
+    public String toString() {
+        // Formata
+        String t;
+        switch (type) {
+            case ID:
+                t = "id";
+                return "[" + t + ", " + lexeme + "]";
+            case NU:
+                t = "nu";
+                return "[" + t + ", " + lexeme + "]";
+            case FR:
+                t = "fr";
+                return "[" + t + "," + lexeme + "]";
+            case INICIO: return "[inicio, ]";
+            case FIM: return "[fim, ]";
+            case VAR: return "[var, ]";
+            case LEIA: return "[leia, ]";
+            case ESCREVA: return "[escreva, ]";
+            case SE: return "[se, ]";
+            case SENAO: return "[senao, ]"; 
+            case OR: return "[or, " + lexeme + "]";
+            case OM: return "[om, " + lexeme + "]";
+            case OL: return "[ol, " + lexeme + "]";
+            case LPAREN: return "[(, ]";
+            case RPAREN: return "[), ]";
+            case COLON: return "[:, ]";
+            case SEMICOLON: return "[;, ]";
+            case EOF: return "[EOF, ]";
+            default: return "[" + type + ", " + lexeme + "]";
+        }
+    }
+}
